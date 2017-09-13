@@ -13,6 +13,7 @@ function Start () {
 	rb = GetComponent.<Rigidbody2D>();
 
 	rb.AddForce(transform.up * thrust);
+	Destry(GameObject, 7.0f);
 }
 
 function Update () {
