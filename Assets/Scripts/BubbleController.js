@@ -6,6 +6,7 @@ private var rb : Rigidbody2D;
 
 // Public vars will show in the Unity editor component
 public var thrust : float = 5;
+public var destroyDelay : float = 15.0f;
 
 function Start () {
 	anim = GetComponent.<Animator>();
@@ -13,7 +14,7 @@ function Start () {
 	rb = GetComponent.<Rigidbody2D>();
 
 	rb.AddForce(transform.up * thrust);
-	Destroy(gameObject, 15.0f);
+	Destroy(gameObject, destroyDelay);
 }
 
 function Update () {
