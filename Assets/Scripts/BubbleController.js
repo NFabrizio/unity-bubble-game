@@ -13,7 +13,7 @@ function Start () {
 	rb = GetComponent.<Rigidbody2D>();
 
 	rb.AddForce(transform.up * thrust);
-	Destroy(gameObject, 7.0f);
+	Destroy(gameObject, 15.0f);
 }
 
 function Update () {
