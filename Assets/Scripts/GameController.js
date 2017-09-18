@@ -18,6 +18,6 @@ public function AddPoints(howMany : int) {
     Score += howMany;
 }
 
-public function SubtractLives(howMany : int) {
-    Lives -= howMany;
+public function SubtractLives() {
+    Lives -= 1;
 }
