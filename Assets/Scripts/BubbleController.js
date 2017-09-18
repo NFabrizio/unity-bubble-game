@@ -26,9 +26,9 @@ function OnMouseDown () {
 //  Debug.Log("You clicked the bubble");
 
   var gc : GameObject = GameObject.FindGameObjectWithTag("GameController");
-  var scoreKeeper : ScoreKeeper = gc.GetComponent.<ScoreKeeper>();
+  var gameController : GameController = gc.GetComponent.<GameController>();
 
-  scoreKeeper.AddPoints(PointValue);
+  gameController.AddPoints(PointValue);
   audioSrc.Play();
   anim.SetTrigger("Popping");
   Destroy(gameObject, 0.5);
