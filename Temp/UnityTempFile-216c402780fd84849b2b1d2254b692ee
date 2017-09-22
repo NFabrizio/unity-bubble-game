@@ -106,3 +106,6 @@
 -r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll'
 -i:UnityEditor
 'Assets/Scripts/BubbleController.js'
+'Assets/Scripts/BubbleSpawnPointController.js'
+'Assets/Scripts/DestroyByBoundary.js'
+'Assets/Scripts/GameController.js'

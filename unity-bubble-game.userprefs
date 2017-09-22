@@ -2,7 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BubbleController.js">
     <Files>
-      <File FileName="Assets/Scripts/BubbleController.js" Line="15" Column="26" />
+      <File FileName="Assets/Scripts/BubbleSpawnPointController.js" Line="22" Column="35" />
+      <File FileName="Assets/Scripts/BubbleController.js" Line="45" Column="1" />
+      <File FileName="Assets/Scripts/GameController.js" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/DestroyByBoundary.js" Line="14" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
