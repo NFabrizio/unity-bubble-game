@@ -1,24 +1,33 @@
 ﻿#pragma strict
 
-var BubblePrefab : GameObject;
 private var nextGenTime : float;
-var DelayUpper : float;
-var DelayLower : float;
-var LeftBoundary : float = -8;
-var RightBoundary : float = 8;
+private var stageDimensions : Vector3;
+private var gameController : GameController;
+private var gc : GameObject;
+private var gameOver : boolean;
+
+public var BubblePrefab : GameObject;
+public var DelayUpper : float;
+public var DelayLower : float;
+public var LeftBoundary : float = -8;
+public var RightBoundary : float = 8;
 
 function Start () {
-	
+    stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+	gc = GameObject.FindGameObjectWithTag("GameController");
+	gameController = gc.GetComponent.<GameController>();
 }
 
 function Update () {
-  if(Time.time > nextGenTime) {
-	Instantiate(BubblePrefab, transform.position, Quaternion.identity);
+  gameOver = gameController.GetGameStatus();
+
+  if(Time.time > nextGenTime && !gameOver) {
+    Instantiate(BubblePrefab, transform.position, Quaternion.identity);
 	var randomDelay : float = Random.Range(DelayLower, DelayUpper);
 	nextGenTime = Time.time + randomDelay;
 
 	var randomX : float = Random.Range(LeftBoundary, RightBoundary);
-	var newPosition : Vector3 = new Vector3(randomX, transform.position.y, transform.position.z);
+	var newPosition : Vector3 = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
 	transform.position = newPosition;
   }
 }

@@ -5,7 +5,7 @@ private var audioSrc : AudioSource;
 private var rb : Rigidbody2D;
 private var gc : GameObject;
 private var gameController : GameController;
-private var _isVisible : boolean;
+private var gameOver : boolean;
 
 // Public vars will show in the Unity editor component
 public var thrust : float = 0.1;
@@ -22,9 +22,18 @@ function Start () {
 	rb.AddForce(transform.up * thrust);
 }
 
+function Update () {
+	gameOver = gameController.GetGameStatus();
+
+	if(gameOver) {
+		anim.SetTrigger("Popping");
+		Destroy(gameObject, 0.5);
+	}
+}
+
 function OnMouseDown () {
-  gameController.AddPoints(PointValue);
-  audioSrc.Play();
-  anim.SetTrigger("Popping");
-  Destroy(gameObject, 0.5);
+	gameController.AddPoints(PointValue);
+	audioSrc.Play();
+	anim.SetTrigger("Popping");
+	Destroy(gameObject, 0.5);
 }
