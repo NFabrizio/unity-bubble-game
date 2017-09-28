@@ -36,4 +36,6 @@ function OnMouseDown () {
 	audioSrc.Play();
 	anim.SetTrigger("Popping");
 	Destroy(gameObject, 0.5);
+	gameController.BubblePop();
+	gameController.LevelStatusCheck();
 }

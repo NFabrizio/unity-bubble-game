@@ -13,6 +13,8 @@ function Start() {
 }
 
 function OnTriggerExit2D(other: Collider2D) {
-    gameController.SubtractLives();
     Destroy(other.gameObject);
+    gameController.SubtractLives();
+	gameController.BubblePop();
+	gameController.LevelStatusCheck();
 }
