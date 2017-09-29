@@ -14,6 +14,7 @@ public var GameRestartButton : UI.Button;
 public var LevelOverDisplay : UI.Text;
 public var Lives : int = 3;
 public var LifeDisplay : UI.Text;
+public var NextLevelButton : UI.Button;
 public var Score : int = 0;
 public var ScoreDisplay : UI.Text;
 
@@ -24,6 +25,7 @@ function Start () {
 	LevelOverDisplay.text = "";
 	GameOverDisplay.text = "";
 	GameRestartButton.gameObject.SetActive(false);
+	NextLevelButton.gameObject.SetActive(false);
 }
 
 function Update () {
@@ -83,7 +85,12 @@ public function LevelStatusCheck() {
 public function LevelOver() {
 	levelOver = true;
     LevelOverDisplay.text = "You Did It! \n Level Passed.";
+	NextLevelButton.gameObject.SetActive(true);
     return true;
+}
+
+public function NextLevel() {
+    SceneManager.LoadScene("Level2");
 }
 
 public function SubtractLives() {
