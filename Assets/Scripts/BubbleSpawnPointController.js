@@ -6,7 +6,6 @@ private var gc : GameObject;
 private var gameOver : boolean;
 private var nextGenTime : float;
 private var stageDimensions : Vector3;
-//private var levelOver : boolean;
 
 public var BubblePrefab : GameObject;
 public var DelayUpper : float;
@@ -19,16 +18,13 @@ function Start () {
     stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 	gc = GameObject.FindGameObjectWithTag("GameController");
 	gameController = gc.GetComponent.<GameController>();
-//	levelOver = gameController.LevelOver();
 }
 
 function Update () {
 	bubbleCount = gameController.GetBubbleCount();
 	gameOver = gameController.GetGameStatus();
-//Debug.Log(bubbleCount);
 
 	if(!bubbleCount) {
-//		gameController.LevelOver();
 		return;
 	}
 

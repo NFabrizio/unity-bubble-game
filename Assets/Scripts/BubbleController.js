@@ -1,11 +1,15 @@
 ﻿#pragma strict
 
+import UnityEngine.SceneManagement;
+
 private var anim : Animator;
 private var audioSrc : AudioSource;
 private var rb : Rigidbody2D;
 private var gc : GameObject;
 private var gameController : GameController;
 private var gameOver : boolean;
+private var levelNumber : int;
+private var thrustFactor : int;
 
 // Public vars will show in the Unity editor component
 public var thrust : float = 0.1;
@@ -19,7 +23,7 @@ function Start () {
 	gc = GameObject.FindGameObjectWithTag("GameController");
 	gameController = gc.GetComponent.<GameController>();
 
-	rb.AddForce(transform.up * thrust);
+	rb.AddForce(transform.up * (thrust * gameController.GetLevelNumber()));
 }
 
 function Update () {

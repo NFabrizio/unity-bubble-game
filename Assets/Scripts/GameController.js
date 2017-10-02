@@ -6,6 +6,8 @@ private var BubblesSpawned : int = 0;
 private var BubblesPopped : int = 0;
 private var gameOver : boolean;
 private var gameRestart : boolean;
+private var lastCharPosition : int;
+private var levelName : String;
 private var levelOver : boolean;
 
 public var BubbleCount : int = 20;
@@ -26,6 +28,8 @@ function Start () {
 	GameOverDisplay.text = "";
 	GameRestartButton.gameObject.SetActive(false);
 	NextLevelButton.gameObject.SetActive(false);
+	levelName = SceneManager.GetActiveScene().name;
+	lastCharPosition = levelName.length - 1;
 }
 
 function Update () {
@@ -74,6 +78,10 @@ public function GetBubbleStatus() {
 
 public function GetGameStatus() {
 	return gameOver;
+}
+
+public function GetLevelNumber() {
+	return int.Parse(levelName[lastCharPosition].ToString());;
 }
 
 public function LevelStatusCheck() {
