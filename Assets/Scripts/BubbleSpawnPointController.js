@@ -18,6 +18,16 @@ function Start () {
     stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 	gc = GameObject.FindGameObjectWithTag("GameController");
 	gameController = gc.GetComponent.<GameController>();
+//Debug.Log("Delay Initial");
+Debug.Log(gameController.GetLevelNumber());
+//Debug.Log(DelayLower);
+//Debug.Log(DelayUpper);
+	DelayLower = DelayLower / gameController.GetLevelNumber();
+	DelayUpper = DelayUpper / gameController.GetLevelNumber();
+//Debug.Log("Delay Final");
+//Debug.Log(gameController.GetLevelNumber());
+Debug.Log(DelayLower);
+Debug.Log(DelayUpper);
 }
 
 function Update () {
