@@ -644,8 +644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BubblePrefab: {fileID: 1008872293604334, guid: 3ae621e637e944397a12dee5998d4550,
     type: 2}
-  DelayUpper: 4
-  DelayLower: 1
+  DelayUpper: 3
+  DelayLower: 0.5
   LeftBoundary: -8
   RightBoundary: 8
 --- !u!4 &334473749
@@ -1051,10 +1051,8 @@ MonoBehaviour:
   GameOverDisplay: {fileID: 493099932}
   GameRestartButton: {fileID: 654223435}
   LevelOverDisplay: {fileID: 334420386}
-  Lives: 3
   LifeDisplay: {fileID: 137156335}
   NextLevelButton: {fileID: 29309007}
-  Score: 0
   ScoreDisplay: {fileID: 2127568976}
 --- !u!4 &1567394072
 Transform:

@@ -10,16 +10,19 @@ private var lastCharPosition : int;
 private var levelName : String;
 private var levelNumber : int = 1;
 private var levelOver : boolean;
+private var nextLevelName : String;
+private var nextLevelNumber : int;
 
 public var BubbleCount : int = 20;
 public var GameOverDisplay : UI.Text;
 public var GameRestartButton : UI.Button;
 public var LevelOverDisplay : UI.Text;
-public var Lives : int = 3;
 public var LifeDisplay : UI.Text;
 public var NextLevelButton : UI.Button;
-public var Score : int = 0;
 public var ScoreDisplay : UI.Text;
+
+static var lives : int = 3;
+static var score : int = 0;
 
 function Start () {
 	gameOver = false;
@@ -35,12 +38,12 @@ function Start () {
 }
 
 function Update () {
-	ScoreDisplay.text = "Score: " + Score.ToString();
-	LifeDisplay.text = "Lives: " + Lives.ToString();
+	ScoreDisplay.text = "Score: " + score.ToString();
+	LifeDisplay.text = "Lives: " + lives.ToString();
 }
 
 public function AddPoints(howMany : int) {
-    Score += howMany;
+    score += howMany;
 }
 
 public function BubblePop() {
@@ -61,7 +64,9 @@ public function GameOver() {
 }
 
 public function GameRestart() {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    lives = 3;
+    score = 0;
+    SceneManager.LoadScene("Level1");
 }
 
 public function GetBubbleCount() {
@@ -103,14 +108,22 @@ public function LevelOver() {
 }
 
 public function NextLevel() {
-    
-    SceneManager.LoadScene("Level2");
+    nextLevelNumber = GetLevelNumber() + 1;
+    levelName = levelName.Substring(0, levelName.length - 1);
+    nextLevelName = levelName.Concat(levelName, nextLevelNumber.ToString());
+//Debug.Log("nextLevelNumber");
+//Debug.Log(nextLevelNumber);
+//Debug.Log("levelName");
+//Debug.Log(levelName);
+//Debug.Log("nextLevelName");
+//Debug.Log(nextLevelName);
+    SceneManager.LoadScene(nextLevelName);
 }
 
 public function SubtractLives() {
-    Lives -= 1;
+    lives -= 1;
 
-    if(Lives == 0) {
+    if(lives == 0) {
 	    GameOver();
     }
 }

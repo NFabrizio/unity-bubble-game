@@ -1047,14 +1047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cc37be5c6c48e7a8ce9510fe4f647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleCount: 5
+  BubbleCount: 10
   GameOverDisplay: {fileID: 493099932}
   GameRestartButton: {fileID: 654223435}
   LevelOverDisplay: {fileID: 334420386}
-  Lives: 3
   LifeDisplay: {fileID: 137156335}
   NextLevelButton: {fileID: 29309007}
-  Score: 0
   ScoreDisplay: {fileID: 2127568976}
 --- !u!4 &1567394072
 Transform:
