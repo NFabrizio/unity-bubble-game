@@ -572,7 +572,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &334420385
 CanvasRenderer:
@@ -612,9 +612,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You Did It!
+  m_Text: 'You Win!
 
-    Level Passed.'
+    All Levels Passed!'
 --- !u!1 &334473747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cc37be5c6c48e7a8ce9510fe4f647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleCount: 10
+  BubbleCount: 5
   GameOverDisplay: {fileID: 493099932}
   GameRestartButton: {fileID: 654223435}
   LevelOverDisplay: {fileID: 334420386}

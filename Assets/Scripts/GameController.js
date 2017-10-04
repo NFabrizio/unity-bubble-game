@@ -102,6 +102,10 @@ public function LevelStatusCheck() {
 
 public function LevelOver() {
 	levelOver = true;
+	if(GetLevelNumber() >= 5) {
+	    LevelOverDisplay.text = "You Win! \n All Levels Passed!";
+        return true;
+	}
     LevelOverDisplay.text = "You Did It! \n Level Passed.";
 	NextLevelButton.gameObject.SetActive(true);
     return true;
