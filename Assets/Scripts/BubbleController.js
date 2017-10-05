@@ -13,7 +13,6 @@ private var thrustFactor : int;
 
 // Public vars will show in the Unity editor component
 public var thrust : float = 0.1;
-public var destroyDelay : float = 15.0f;
 public var PointValue : int = 100;
 
 function Start () {
