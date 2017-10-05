@@ -16,6 +16,7 @@ private var nextLevelNumber : int;
 public var BubbleCount : int = 20;
 public var GameOverDisplay : UI.Text;
 public var GameRestartButton : UI.Button;
+public var LevelDisplay : UI.Text;
 public var LevelOverDisplay : UI.Text;
 public var LifeDisplay : UI.Text;
 public var NextLevelButton : UI.Button;
@@ -32,9 +33,10 @@ function Start () {
 	GameOverDisplay.text = "";
 	GameRestartButton.gameObject.SetActive(false);
 	NextLevelButton.gameObject.SetActive(false);
-//	levelName = SceneManager.GetActiveScene().name;
-//	lastCharPosition = levelName.length - 1;
-//	levelNumber = int.Parse(levelName[lastCharPosition].ToString());
+	levelName = SceneManager.GetActiveScene().name;
+	lastCharPosition = levelName.length - 1;
+	levelNumber = int.Parse(levelName[lastCharPosition].ToString());
+	LevelDisplay.text = "Level " + levelNumber;
 }
 
 function Update () {
