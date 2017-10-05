@@ -24,9 +24,7 @@ function Start () {
 	DelayLower = DelayLower / gameController.GetLevelNumber();
 	DelayUpper = DelayUpper / gameController.GetLevelNumber();
 
-	randomX = Random.Range(LeftBoundary, RightBoundary);
-	newPosition = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
-	transform.position = newPosition;
+	ChangeBubblePosition();
 }
 
 function Update () {
@@ -45,8 +43,12 @@ function Update () {
 		randomDelay = Random.Range(DelayLower, DelayUpper);
 		nextGenTime = Time.time + randomDelay;
 
-		randomX = Random.Range(LeftBoundary, RightBoundary);
-		newPosition = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
-		transform.position = newPosition;
+		ChangeBubblePosition();
 	}
+}
+
+function ChangeBubblePosition() {
+    randomX = Random.Range(LeftBoundary, RightBoundary);
+	newPosition = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
+	transform.position = newPosition;
 }
