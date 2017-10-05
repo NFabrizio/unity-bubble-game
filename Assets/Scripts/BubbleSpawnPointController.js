@@ -4,7 +4,10 @@ private var bubbleCount : boolean;
 private var gameController : GameController;
 private var gc : GameObject;
 private var gameOver : boolean;
+private var newPosition : Vector3;
 private var nextGenTime : float;
+private var randomDelay : float;
+private var randomX : float;
 private var stageDimensions : Vector3;
 
 public var BubblePrefab : GameObject;
@@ -18,16 +21,12 @@ function Start () {
     stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 	gc = GameObject.FindGameObjectWithTag("GameController");
 	gameController = gc.GetComponent.<GameController>();
-//Debug.Log("Delay Initial");
-//Debug.Log(gameController.GetLevelNumber());
-//Debug.Log(DelayLower);
-//Debug.Log(DelayUpper);
 	DelayLower = DelayLower / gameController.GetLevelNumber();
 	DelayUpper = DelayUpper / gameController.GetLevelNumber();
-//Debug.Log("Delay Final");
-//Debug.Log(gameController.GetLevelNumber());
-//Debug.Log(DelayLower);
-//Debug.Log(DelayUpper);
+
+	randomX = Random.Range(LeftBoundary, RightBoundary);
+	newPosition = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
+	transform.position = newPosition;
 }
 
 function Update () {
@@ -43,11 +42,11 @@ function Update () {
 			Instantiate(BubblePrefab, transform.position, Quaternion.identity);
 			gameController.BubbleSpawn();
 		}
-		var randomDelay : float = Random.Range(DelayLower, DelayUpper);
+		randomDelay = Random.Range(DelayLower, DelayUpper);
 		nextGenTime = Time.time + randomDelay;
 
-		var randomX : float = Random.Range(LeftBoundary, RightBoundary);
-		var newPosition : Vector3 = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
+		randomX = Random.Range(LeftBoundary, RightBoundary);
+		newPosition = new Vector3(randomX, -(stageDimensions.y / 2), transform.position.z);
 		transform.position = newPosition;
 	}
 }

@@ -117,12 +117,6 @@ public function NextLevel() {
     nextLevelNumber = GetLevelNumber() + 1;
     levelName = levelName.Substring(0, levelName.length - 1);
     nextLevelName = levelName.Concat(levelName, nextLevelNumber.ToString());
-//Debug.Log("nextLevelNumber");
-//Debug.Log(nextLevelNumber);
-//Debug.Log("levelName");
-//Debug.Log(levelName);
-//Debug.Log("nextLevelName");
-//Debug.Log(nextLevelName);
     SceneManager.LoadScene(nextLevelName);
 }
 
